@@ -1,0 +1,186 @@
+*,
+*::after,
+*::before {
+  margin: 0px;
+  box-sizing: inherit;
+  font-weight: 300;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  box-sizing: border-box;
+  font-family: "Poppins", sans serif;
+  line-height: 1;
+  padding: 0 10rem;
+  overflow: hidden;
+  background: radial-gradient(#28282b, #000);
+}
+
+.intro-animation {
+  position: fixed;
+  z-index: 2;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background: #28282b;
+  transition: 1s;
+
+  &__logo {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3.5rem;
+    color: #fffdd0;
+
+    &--span {
+      position: relative;
+      display: inline-block;
+      left: -5rem;
+      opacity: 0;
+
+      &.active {
+        left: 0;
+        opacity: 1;
+        transition: ease-in-out 0.5s;
+      }
+      &.fade {
+        left: 15rem;
+        opacity: 0;
+        transition: ease-in-out 0.5s;
+      }
+    }
+  }
+}
+
+// Main page - Image composition styling
+.info-title,
+iframe {
+  display: none;
+}
+
+.composition {
+  position: relative;
+  max-width: 80rem;
+  height: 100vh;
+  margin: auto;
+  z-index: 1;
+
+  &__photo {
+    width: 35%;
+    position: absolute;
+    box-shadow: 0 1.5rem 4rem rgba(#000, 0.4);
+    outline-offset: 2rem;
+    transition: all 0.2s;
+
+    &--p1 {
+      left: 20%;
+      top: 50%;
+    }
+
+    &--p2 {
+      left: 33%;
+      bottom: 6%;
+    }
+
+    &--p3 {
+      right: 15%;
+      top: 30%;
+    }
+
+    &--p4 {
+      right: 0%;
+      top: 20%;
+    }
+
+    &--p5 {
+      left: 8%;
+      top: 65%;
+    }
+
+    &--p6 {
+      left: 21%;
+      top: 26%;
+    }
+
+    &--p7 {
+      left: 50%;
+      top: 6%;
+    }
+
+    &--p8 {
+      left: 17%;
+      top: 12%;
+    }
+
+    &--p9 {
+      left: 47%;
+      top: 53%;
+    }
+
+    &--p10 {
+      left: 1%;
+      top: 31%;
+    }
+
+    &--p12 {
+      right: 3%;
+      top: 63%;
+    }
+
+    &:hover {
+      outline: 1.5rem solid #fffdd0;
+      transform: scale(1.05) translateY(-1rem);
+      box-shadow: 0 2.5rem 4rem rgba(#000, 0.9);
+      z-index: 2;
+    }
+  }
+
+  &:hover &__photo:not(:hover) {
+    transform: scale(0.9);
+    //  composition:hover composition__photo:not(:hover): Når du hover på compisition, vælg så de elementer der ikke er hover.
+  }
+}
+
+// Information regarding screen size
+@media screen and (max-width: 1000px) {
+  body {
+    background: #fff;
+  }
+
+  .info-title {
+    display: block;
+    font-weight: 600;
+    font-size: 3rem;
+    text-align: center;
+    color: #000;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+  }
+
+  iframe {
+    display: block;
+    border: none;
+    position: absolute;
+    top: 70vh;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .composition {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .info-title {
+    font-size: 2rem;
+  }
+}
